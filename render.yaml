@@ -1,0 +1,19 @@
+# Render Blueprint — free-tier deployment of the triage service.
+#
+# The Dockerfile pins uvicorn to 8000, so the command is overridden here to use
+# the port Render injects. With no Ollama reachable, TICKETIQ_LLM_BACKEND=auto
+# falls back to the offline writer, so the service is useful with no model server.
+services:
+  - type: web
+    name: ticketiq
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    dockerfilePath: ./Dockerfile
+    dockerCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TICKETIQ_LLM_BACKEND
+        value: auto
