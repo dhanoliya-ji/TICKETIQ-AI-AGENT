@@ -1,25 +1,6 @@
-# ---------------------------------------------------------------------------
-# Runtime dependencies for the TicketIQ service.
-# Pinned with ">=" so a fresh machine gets a working, recent version.
-# ---------------------------------------------------------------------------
-
-# Web API layer
-fastapi>=0.110.0
-uvicorn>=0.27.0
-pydantic>=2.6.0
-
-# Vector store. faiss-cpu holds the knowledge base embeddings and answers the
-# top-K similarity search; numpy builds the dense float32 rows it indexes.
-faiss-cpu>=1.8.0
-numpy>=1.26.0
-
-# scikit-learn, used only where requirement 2 permits it: TF-IDF vectorisation,
-# the stratified train/test split, and scoring the classifier's predictions.
-# The classifier's own maths is hand-written - model.fit() is never called.
-scikit-learn>=1.4.0
-
-# Aspect level sentiment scoring (rule + lexicon based, no model download)
+numpy>=1.26
+scikit-learn>=1.4
+faiss-cpu>=1.8
 vaderSentiment>=3.3.2
-
-# HTTP client used to talk to a local Ollama server (optional at runtime)
-requests>=2.31.0
+requests>=2.31
+pytest>=8

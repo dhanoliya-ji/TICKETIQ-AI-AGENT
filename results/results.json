@@ -1,0 +1,85 @@
+{
+  "classifier": {
+    "accuracy": 0.95,
+    "macro_precision": 0.9583333333333334,
+    "macro_recall": 0.95,
+    "macro_f1": 0.9494949494949495,
+    "per_category": {
+      "account": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "billing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "feature_request": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "support": 10
+      },
+      "technical": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 10
+      }
+    },
+    "sample_count": 40,
+    "training_size": 120,
+    "test_size": 40,
+    "confusion": {
+      "account": {
+        "account": 10,
+        "billing": 0,
+        "feature_request": 0,
+        "technical": 0
+      },
+      "billing": {
+        "account": 0,
+        "billing": 10,
+        "feature_request": 0,
+        "technical": 0
+      },
+      "feature_request": {
+        "account": 0,
+        "billing": 0,
+        "feature_request": 8,
+        "technical": 2
+      },
+      "technical": {
+        "account": 0,
+        "billing": 0,
+        "feature_request": 0,
+        "technical": 10
+      }
+    }
+  },
+  "bandit": {
+    "tickets": 20000,
+    "states": 36,
+    "epsilon": 0.15,
+    "optimal_share_first_1000": 0.544,
+    "optimal_share_first_4000": 0.6765,
+    "optimal_share_last_4000": 0.888,
+    "average_reward": 6.676875115345705,
+    "average_reward_by_block": [
+      6.098446734646926,
+      6.635926361743757,
+      6.590670278624556,
+      6.6619180621274685,
+      6.676237676279006,
+      6.796218687471219,
+      6.733720835157956,
+      6.836090016817249,
+      6.8947451331168965,
+      6.8447773674718775
+    ],
+    "ceiling_with_exploration": 0.8875
+  }
+}
