@@ -15,6 +15,9 @@ ticket ─► Naive Bayes category ─┐
           customer feedback + latency ─► reward ─► bandit update
 ```
 
+**Walkthrough:** [`demo.ipynb`](demo.ipynb) shows the classifier, the bandit learning curve and two tickets going
+through the agent, in seconds on a laptop.
+
 ## Results
 
 **Ticket classifier**: Naive Bayes written from scratch (counting, Laplace smoothing, log-probability scoring),
@@ -65,6 +68,7 @@ Average reward per ticket rises from 6.10 in the first tenth of the run to 6.84 
 pip install -r requirements.txt
 python reproduce.py        # classifier report + 20,000-ticket bandit simulation, writes results/results.json
 pytest -q                  # 9 checks, no model server needed
+jupyter notebook demo.ipynb   # the walkthrough
 ```
 
 Triage one ticket:
